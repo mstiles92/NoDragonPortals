@@ -1,7 +1,10 @@
 package com.mstiles92.nodragonportals;
 
+import java.util.List;
+
 import org.bukkit.Material;
 import org.bukkit.PortalType;
+import org.bukkit.block.BlockState;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,6 +27,16 @@ public class PortalCreationListener implements Listener {
 	public void onEntityCreatePortalEvent(EntityCreatePortalEvent event) {
 		if ((event.getEntityType() == EntityType.ENDER_DRAGON) && (event.getPortalType() == PortalType.ENDER) && (plugin.getConfig().getBoolean("DisablePortals"))) {
 			event.setCancelled(true);
+		}
+		// Remove egg from top of portal if portals are not disabled and giving egg to player
+		if ((!plugin.getConfig().getBoolean("DisablePortals")) && (plugin.getConfig().getBoolean("GiveEggToPlayer"))) {
+			List<BlockState> blocks = event.getBlocks();
+			for (BlockState bs : blocks) {
+				if (bs.getType() == Material.DRAGON_EGG) {
+					bs.setType(Material.AIR);
+					bs.update();
+				}
+			}
 		}
 	}
 	
