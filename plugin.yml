@@ -1,0 +1,6 @@
+author: mstiles92
+description: Disables dragons spawning portals on their death, gives the egg to the player who killed the dragon.
+name: NoDragonPortals
+main: com.mstiles92.nodragonportals.NoDragonPortals
+version: '1.0'
+startup: postworld

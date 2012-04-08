@@ -1,0 +1,6 @@
+NoDragonPortals v1.0
+By: mstiles92
+
+This Bukkit plugin disables the portals that dragons spawn on their death.
+The dragon egg can be given to the player who dealt the final blow to the dragon.
+Enable/disable these two features in the config file.

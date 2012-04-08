@@ -1,0 +1,9 @@
+# Binaries
+/bin
+/NoDragonPortals.jar
+
+# Eclipse stuff
+/.settings
+/.classpath
+/.project
+/.metadata
