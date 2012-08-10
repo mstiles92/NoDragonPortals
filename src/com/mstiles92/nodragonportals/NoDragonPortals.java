@@ -7,6 +7,7 @@ public class NoDragonPortals extends JavaPlugin {
 	public void onEnable() {
 		new PortalCreationListener(this);
 		this.getConfig().options().copyDefaults(true);
+		this.saveConfig();
 	}
 	
 	public void onDisable() {

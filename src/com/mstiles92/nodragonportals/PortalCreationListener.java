@@ -23,7 +23,7 @@ public class PortalCreationListener implements Listener {
 		this.plugin = plugin;
 	}
 	
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
 	public void onEntityCreatePortalEvent(EntityCreatePortalEvent event) {
 		if ((event.getEntityType() == EntityType.ENDER_DRAGON) && (event.getPortalType() == PortalType.ENDER) && (plugin.getConfig().getBoolean("DisablePortals"))) {
 			event.setCancelled(true);
@@ -40,7 +40,7 @@ public class PortalCreationListener implements Listener {
 		}
 	}
 	
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
 	public void onEntityDeathEvent(EntityDeathEvent event) {
 		if ((event.getEntityType() == EntityType.ENDER_DRAGON) && (plugin.getConfig().getBoolean("GiveEggToPlayer"))) {
 			Player p = event.getEntity().getKiller();
