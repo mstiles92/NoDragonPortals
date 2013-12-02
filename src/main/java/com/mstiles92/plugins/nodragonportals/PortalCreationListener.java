@@ -1,4 +1,4 @@
-package com.mstiles92.nodragonportals;
+package com.mstiles92.plugins.nodragonportals;
 
 import java.util.List;
 
